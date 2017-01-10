@@ -1,0 +1,8 @@
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\bin\Debug\AsyncSocketClient.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\bin\Debug\AsyncSocketClient.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\obj\x86\Debug\AsyncSocketClient.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\obj\x86\Debug\AsyncSocketClient.FormAsyncSocketClient.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\obj\x86\Debug\AsyncSocketClient.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\obj\x86\Debug\AsyncSocketClient.csproj.GenerateResource.Cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\obj\x86\Debug\AsyncSocketClient.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\AsyncSocketClient\obj\x86\Debug\AsyncSocketClient.pdb

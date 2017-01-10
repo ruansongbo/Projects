@@ -1,0 +1,16 @@
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\bin\Debug\Station.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\bin\Debug\Station.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\obj\x86\Debug\Station.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\obj\x86\Debug\Station.FormServer.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\obj\x86\Debug\Station.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\obj\x86\Debug\Station.csproj.GenerateResource.Cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\obj\x86\Debug\Station.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Station\Station\obj\x86\Debug\Station.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\obj\x86\Debug\Station.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\obj\x86\Debug\Station.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\bin\Debug\Station.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\bin\Debug\Station.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\obj\x86\Debug\Station.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\obj\x86\Debug\Station.FormServer.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\obj\x86\Debug\Station.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\Station\obj\x86\Debug\Station.csproj.GenerateResource.Cache

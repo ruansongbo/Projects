@@ -1,0 +1,15 @@
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\bin\Debug\SyncSocketClient.exe
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\bin\Debug\SyncSocketClient.pdb
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\obj\x86\Debug\SyncSocketClient.FormSyncSocketClient.resources
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\obj\x86\Debug\SyncSocketClient.Properties.Resources.resources
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\obj\x86\Debug\SyncSocketClient.csproj.GenerateResource.Cache
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\obj\x86\Debug\SyncSocketClient.exe
+C:\Users\bb\Desktop\C#\源代码\第4篇  新技术篇\第24章  网络编程技术\SyncSocketClient\obj\x86\Debug\SyncSocketClient.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\bin\Debug\SyncSocketClient.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\bin\Debug\SyncSocketClient.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\obj\x86\Debug\SyncSocketClient.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\obj\x86\Debug\SyncSocketClient.FormSyncSocketClient.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\obj\x86\Debug\SyncSocketClient.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\obj\x86\Debug\SyncSocketClient.csproj.GenerateResource.Cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\obj\x86\Debug\SyncSocketClient.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\SyncSocketClient\obj\x86\Debug\SyncSocketClient.pdb

@@ -1,0 +1,6 @@
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\test\obj\Debug\test.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\test\bin\Debug\test.exe.config
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\test\bin\Debug\test.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\test\bin\Debug\test.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\test\obj\Debug\test.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\test\obj\Debug\test.pdb

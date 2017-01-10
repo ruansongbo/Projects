@@ -1,0 +1,9 @@
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\bin\Debug\Remote.exe.config
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\bin\Debug\Remote.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\bin\Debug\Remote.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\obj\Debug\Remote.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\obj\Debug\Remote.FormRemote.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\obj\Debug\Remote.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\obj\Debug\Remote.csproj.GenerateResource.Cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\obj\Debug\Remote.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Remote\Remote\obj\Debug\Remote.pdb

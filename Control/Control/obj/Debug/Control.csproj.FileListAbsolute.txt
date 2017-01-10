@@ -1,0 +1,9 @@
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\bin\Debug\Control.exe.config
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\bin\Debug\Control.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\bin\Debug\Control.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\obj\Debug\Control.csprojResolveAssemblyReference.cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\obj\Debug\Control.Form1.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\obj\Debug\Control.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\obj\Debug\Control.csproj.GenerateResource.Cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\obj\Debug\Control.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Control\Control\obj\Debug\Control.pdb
