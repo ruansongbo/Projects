@@ -32,11 +32,11 @@ namespace Control
             data.height = 10;
             data.incontrolID = 0;
             data.lean = 11;
-            data.luffer = 12;
+            data.luffer = 1;
             data.remoteID = 0;
             data.rotation = 13;
-            data.torque = 14;
-            data.windspeed = 15;
+            data.torque = 1;
+            data.windspeed = 1;
         }
         public void Initdata()
         {
@@ -48,7 +48,6 @@ namespace Control
             List<byte> lTemp = new List<byte>();
             lTemp.Add(0xAA);
             lTemp.Add(0xAA);
-            lTemp.Add(0x1f);
             lTemp.AddRange(BitConverter.GetBytes(data.incontrolID));
             lTemp.AddRange(BitConverter.GetBytes(data.remoteID));
             lTemp.AddRange(BitConverter.GetBytes(data.controlID));
@@ -58,6 +57,7 @@ namespace Control
             lTemp.AddRange(BitConverter.GetBytes(data.height));
             lTemp.AddRange(BitConverter.GetBytes(data.lean));
             lTemp.AddRange(BitConverter.GetBytes(data.rotation));
+            lTemp.Add(0x1f);
             for (int i = 0; i < 33; i++)
             {
                 sum += lTemp[i];
@@ -74,15 +74,15 @@ namespace Control
             }
             if (databuffer[33] == sum)
             {
-                data.incontrolID = BitConverter.ToUInt16(databuffer, 3);
-                data.remoteID = BitConverter.ToUInt16(databuffer, 5);
-                data.controlID = BitConverter.ToUInt16(databuffer, 7);
-                data.windspeed = BitConverter.ToSingle(databuffer, 9);
-                data.torque = BitConverter.ToSingle(databuffer, 13);
-                data.luffer = BitConverter.ToSingle(databuffer, 17);
-                data.height = BitConverter.ToSingle(databuffer, 21);
-                data.lean = BitConverter.ToSingle(databuffer, 25);
-                data.rotation = BitConverter.ToSingle(databuffer, 29);
+                data.incontrolID = BitConverter.ToUInt16(databuffer, 2);
+                data.remoteID = BitConverter.ToUInt16(databuffer, 4);
+                data.controlID = BitConverter.ToUInt16(databuffer, 6);
+                data.windspeed = BitConverter.ToSingle(databuffer, 7);
+                data.torque = BitConverter.ToSingle(databuffer, 12);
+                data.luffer = BitConverter.ToSingle(databuffer, 16);
+                data.height = BitConverter.ToSingle(databuffer, 20);
+                data.lean = BitConverter.ToSingle(databuffer, 24);
+                data.rotation = BitConverter.ToSingle(databuffer, 28);
                 return 0;
             }
             else

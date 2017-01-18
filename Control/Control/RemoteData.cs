@@ -25,12 +25,12 @@ namespace Control
         {
             databuffer = new byte[16];
             length = 16;
-            data.controlID = 1;
-            data.height = 2;
-            data.luffer = 3;
-            data.remoteID = 4;
-            data.rotation = 5;
-            data.status = 6;
+            data.controlID = 2;
+            data.height = 1;
+            data.luffer = 0;
+            data.remoteID = 0;
+            data.rotation = -1;
+            data.status = 1;
         }
         public void Initdata()
         {
@@ -42,13 +42,13 @@ namespace Control
             List<byte> lTemp = new List<byte>();
             lTemp.Add(0xAA);
             lTemp.Add(0xAA);
-            lTemp.Add(0x0A);
             lTemp.AddRange(BitConverter.GetBytes(data.status));
             lTemp.AddRange(BitConverter.GetBytes(data.remoteID));
             lTemp.AddRange(BitConverter.GetBytes(data.controlID));
             lTemp.AddRange(BitConverter.GetBytes(data.luffer));
             lTemp.AddRange(BitConverter.GetBytes(data.rotation));
             lTemp.AddRange(BitConverter.GetBytes(data.height));
+            lTemp.Add(0x0A);
             for (int i = 0; i < 15; i++)
             {
                 sum += lTemp[i];
@@ -65,12 +65,12 @@ namespace Control
             }
             if (databuffer[15] == sum)
             {
-                data.status = BitConverter.ToUInt16(databuffer, 3);
-                data.remoteID = BitConverter.ToUInt16(databuffer, 5);
-                data.controlID = BitConverter.ToUInt16(databuffer, 7);
-                data.luffer = BitConverter.ToInt16(databuffer, 9);
-                data.rotation = BitConverter.ToInt16(databuffer,11);
-                data.height = BitConverter.ToInt16(databuffer, 13);
+                data.status = BitConverter.ToUInt16(databuffer, 2);
+                data.remoteID = BitConverter.ToUInt16(databuffer, 4);
+                data.controlID = BitConverter.ToUInt16(databuffer, 6);
+                data.luffer = BitConverter.ToInt16(databuffer, 8);
+                data.rotation = BitConverter.ToInt16(databuffer, 10);
+                data.height = BitConverter.ToInt16(databuffer, 12);
                 return 0;
             }
             else

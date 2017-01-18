@@ -1,0 +1,9 @@
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\obj\Debug\CommandDelayTestClient.Properties.Resources.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\obj\Debug\CommandDelayTestClient.csproj.GenerateResource.Cache
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\bin\Debug\CommandDelayTestClient.exe.config
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\bin\Debug\CommandDelayTestClient.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\bin\Debug\CommandDelayTestClient.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\obj\Debug\CommandDelayTestClient.Client.resources
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\obj\Debug\CommandDelayTestClient.exe
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\obj\Debug\CommandDelayTestClient.pdb
+C:\Users\bb\Documents\Visual Studio 2013\Projects\Test\CommandDelayTestClient\obj\Debug\CommandDelayTestClient.csprojResolveAssemblyReference.cache

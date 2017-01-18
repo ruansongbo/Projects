@@ -20,10 +20,11 @@ namespace Remote
     {
         System.Timers.Timer aTimer = new System.Timers.Timer();
         private bool isExit = false;
+        private UInt16 status;
         private RemoteData remotedata;
         private ControlData controldata;
         private TcpClient client;
-        private IPAddress serverIP = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault<IPAddress>(a => a.AddressFamily.ToString().Equals("InterNetwork"));
+        private IPAddress serverIP = IPAddress.Parse("172.31.103.2");
         private IPAddress selectedcontrolIP;
         private NetworkStream networkStream;
         private EventWaitHandle allDone = new EventWaitHandle(false, EventResetMode.ManualReset);
@@ -322,6 +323,7 @@ namespace Remote
             try
             {
                 GetRemoteData();
+                remotedata.data.status = status;
                 remotedata.encode();
                 consolelist.Invoke(setListBoxCallback, string.Format("发送信息{0}", remotedata.length));
                 networkStream.BeginWrite(remotedata.databuffer, 0, remotedata.length, new AsyncCallback(SendCallback), networkStream);
@@ -460,14 +462,14 @@ namespace Remote
 
         private void startbutton_Click(object sender, EventArgs e)
         {
-            remotedata.data.status = 1;
+            status = 1;
             aTimer.Enabled = true;
         }
 
         private void stopbutton_Click(object sender, EventArgs e)
         {
             aTimer.Enabled = false;
-            remotedata.data.status = 0;
+            status = 0;
             try
             {
                 GetRemoteData();

@@ -48,7 +48,6 @@ namespace Remote
             List<byte> lTemp = new List<byte>();
             lTemp.Add(0xAA);
             lTemp.Add(0xAA);
-            lTemp.Add(0x1f);
             lTemp.AddRange(BitConverter.GetBytes(data.incontrolID));
             lTemp.AddRange(BitConverter.GetBytes(data.remoteID));
             lTemp.AddRange(BitConverter.GetBytes(data.controlID));
@@ -58,11 +57,12 @@ namespace Remote
             lTemp.AddRange(BitConverter.GetBytes(data.height));
             lTemp.AddRange(BitConverter.GetBytes(data.lean));
             lTemp.AddRange(BitConverter.GetBytes(data.rotation));
+            lTemp.Add(0x1f);
             for (int i = 0; i < 33; i++)
             {
                 sum += lTemp[i];
             }
-            lTemp.AddRange(BitConverter.GetBytes(sum));
+            lTemp.Add(sum);
             lTemp.CopyTo(databuffer);
         }
         public int decode()
@@ -74,15 +74,15 @@ namespace Remote
             }
             if (databuffer[33] == sum)
             {
-                data.incontrolID = BitConverter.ToUInt16(databuffer, 3);
-                data.remoteID = BitConverter.ToUInt16(databuffer, 5);
-                data.controlID = BitConverter.ToUInt16(databuffer, 7);
-                data.windspeed = BitConverter.ToSingle(databuffer, 9);
-                data.torque = BitConverter.ToSingle(databuffer, 13);
-                data.luffer = BitConverter.ToSingle(databuffer, 17);
-                data.height = BitConverter.ToSingle(databuffer, 21);
-                data.lean = BitConverter.ToSingle(databuffer, 25);
-                data.rotation = BitConverter.ToSingle(databuffer, 29);
+                data.incontrolID = BitConverter.ToUInt16(databuffer, 2);
+                data.remoteID = BitConverter.ToUInt16(databuffer, 4);
+                data.controlID = BitConverter.ToUInt16(databuffer, 6);
+                data.windspeed = BitConverter.ToSingle(databuffer, 8);
+                data.torque = BitConverter.ToSingle(databuffer, 12);
+                data.luffer = BitConverter.ToSingle(databuffer, 16);
+                data.height = BitConverter.ToSingle(databuffer, 20);
+                data.lean = BitConverter.ToSingle(databuffer, 24);
+                data.rotation = BitConverter.ToSingle(databuffer, 28);
                 return 0;
             }
             else
