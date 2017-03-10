@@ -386,7 +386,7 @@ namespace Station
                 TcpListener mylistener = (TcpListener)ar.AsyncState;
                 TcpClient client = mylistener.EndAcceptTcpClient(ar);
                 console.Invoke(setListBoxCallback, "已接受主机连接" + client.Client.RemoteEndPoint);
-                Server2Control control = new Server2Control(client, Output, DisplayControl);
+                Server2Control control = new Server2Control(client, Output, DisplayControl, ErrorHandle);
                 int count = client.Client.RemoteEndPoint.ToString().LastIndexOf('.');
                 UInt16 index = Convert.ToUInt16(client.Client.RemoteEndPoint.ToString().Substring(count+1,1));
                 control.controlID = index;
@@ -566,6 +566,11 @@ namespace Station
             {
                 torquetextBox.Text = data.ToString();
             }
+        }
+        private void ErrorHandle(Server2Control server2control)
+        {
+            controllist[server2control.controlID] = null;
+            server2control.client.Close();
         }
         private void Output(params object[] args)
         {

@@ -25,7 +25,7 @@ namespace Remote
         {
             databuffer = new byte[16];
             length = 16;
-            data.controlID = 6;
+            data.controlID = 1;
             data.height = 1;
             data.luffer = 0;
             data.remoteID = 0;

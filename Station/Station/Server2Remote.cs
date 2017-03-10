@@ -14,7 +14,9 @@ namespace Station
         private bool isExit;
         private RemoteData remotedata;
         private ControlData controldata;
-        public ushort remoteID = 0;
+        public UInt16 remoteID = 0;
+        public UInt16 status;
+        public UInt16 controlID;
         public delegate void OutputCallback(params object[] args);
         public OutputCallback outputCallback;
         public delegate void DisplayRemoteDataCallback(RemoteData remotedata);
@@ -68,15 +70,16 @@ namespace Station
                                 remotedata.encode();
                                 controllist[remotedata.data.controlID].SendData(remotedata.databuffer);
                                 controllist[remotedata.data.controlID].incontrolID = remoteID;
+                                displayRemoteDataCallback(remotedata);
                             }
                             else
                             {
-                                controllist[remotedata.data.controlID - 1].incontrolID = 0;
+                                controllist[remotedata.data.controlID].incontrolID = 0;
+                                remotedata.encode();
                             }
                         }
                     } 
-                }           
-                displayRemoteDataCallback(remotedata);
+                }
                 outputCallback(string.Format("接收信息{0}",count));
                 if(isExit == false)
                 {

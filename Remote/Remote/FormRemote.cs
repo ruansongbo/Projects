@@ -20,11 +20,13 @@ namespace Remote
     {
         System.Timers.Timer aTimer = new System.Timers.Timer();
         private bool isExit = false;
-        private UInt16 status;
+        private UInt16 status = 0;
         private RemoteData remotedata;
         private ControlData controldata;
+        public UInt16 remoteID;
         private TcpClient client;
-        private IPAddress serverIP = IPAddress.Parse("172.31.103.2");
+        private IPAddress serverIP = Dns.GetHostEntry(Dns.GetHostName()).AddressList.FirstOrDefault<IPAddress>(a => a.AddressFamily.ToString().Equals("InterNetwork"));//IPAddress.Parse("192.168.2.104");
+        private string PingIP = "192.168.2.";
         private IPAddress selectedcontrolIP;
         private NetworkStream networkStream;
         private EventWaitHandle allDone = new EventWaitHandle(false, EventResetMode.ManualReset);
@@ -78,7 +80,7 @@ namespace Remote
             displayControlDataCallback = new DisplayControlDataCallback(DisplayControlData);
             getRemoteDataCallback = new GetRemoteDataCallback(GetRemoteData);
             aTimer.Elapsed += new ElapsedEventHandler(aTimer_Elapsed); 
-            aTimer.Interval = 500;  //设置时间间隔 
+            aTimer.Interval = 2000;  //设置时间间隔 
             aTimer.Enabled = false;
             controldata = new ControlData();
             remotedata = new RemoteData();
@@ -324,6 +326,7 @@ namespace Remote
             {
                 GetRemoteData();
                 remotedata.data.status = status;
+                remotedata.data.remoteID = remoteID;
                 remotedata.encode();
                 consolelist.Invoke(setListBoxCallback, string.Format("发送信息{0}", remotedata.length));
                 networkStream.BeginWrite(remotedata.databuffer, 0, remotedata.length, new AsyncCallback(SendCallback), networkStream);
@@ -384,7 +387,7 @@ namespace Remote
                 int count = networkStream.EndRead(ar);
                 consolelist.Invoke(setListBoxCallback, string.Format("接收信息{0}", count));
                 controldata.decode();
-                remotedata.data.remoteID = controldata.data.remoteID;
+                remoteID = controldata.data.remoteID;
                 DisplayControlData();
                 if(isExit == false)
                 {
@@ -413,7 +416,7 @@ namespace Remote
                     Ping myPing;
                     myPing = new Ping();
                     myPing.PingCompleted += new PingCompletedEventHandler(_myPing_PingCompleted);
-                    string pingIP = "172.31.103." + i.ToString();
+                    string pingIP = PingIP + i.ToString();
                     myPing.SendAsync(pingIP, 1000, null);
                 }
 
@@ -450,7 +453,7 @@ namespace Remote
                     Ping myPing;
                     myPing = new Ping();
                     myPing.PingCompleted += new PingCompletedEventHandler(_myPing_PingCompleted);
-                    string pingIP = "172.31.103." + i.ToString();
+                    string pingIP = PingIP + i.ToString();
                     myPing.SendAsync(pingIP, 1000, null);
                 }
             }
@@ -462,20 +465,29 @@ namespace Remote
 
         private void startbutton_Click(object sender, EventArgs e)
         {
-            status = 1;
-            aTimer.Enabled = true;
-        }
-
-        private void stopbutton_Click(object sender, EventArgs e)
-        {
-            aTimer.Enabled = false;
-            status = 0;
-            try
+            if(status == 0)
             {
+                status = 1;
+                aTimer.Enabled = true;
+                startbutton.Text = "停止";
+            }
+            else if(status == 1)
+            {
+                status = 0;
+                aTimer.Enabled = false;
+                startbutton.Text = "启动";
+                remotedata.data.status = status;
                 GetRemoteData();
                 remotedata.encode();
                 networkStream.BeginWrite(remotedata.databuffer, 0, remotedata.length, new AsyncCallback(SendCallback), networkStream);
                 networkStream.Flush();
+            }
+        }
+
+        private void stopbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
                 if (m_lRealHandle >= 0)
                 {
                     CHCNetSDK.NET_DVR_StopRealPlay(m_lRealHandle);
@@ -552,28 +564,39 @@ namespace Remote
             switch(controldata.data.remoteID)
             {
                 case 0:
+                    this.Text = "遥控器未分配";
+                    break;
+                case 1:
+                    this.Text = "遥控器1";
+                    break;
+                case 2:
+                    this.Text = "遥控器2";
+                    break;
+                case 3:
+                    this.Text = "遥控器3";
+                    break;
+            }
+            switch(controldata.data.incontrolID)
+            {
+                case 0:
                     Radio1(false);
                     Radio2(false);
                     Radio3(false);
-                    this.Text = "遥控器未分配";
                     break;
                 case 1:
                     Radio1(true);
                     Radio2(false);
                     Radio3(false);
-                    this.Text = "遥控器1";
                     break;
                 case 2:
                     Radio1(false);
                     Radio2(true);
                     Radio3(false);
-                    this.Text = "遥控器2";
                     break;
                 case 3:
                     Radio1(false);
                     Radio2(false);
                     Radio3(true);
-                    this.Text = "遥控器3";
                     break;
             }
 

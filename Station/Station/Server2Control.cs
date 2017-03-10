@@ -15,16 +15,20 @@ namespace Station
         private RemoteData remotedata;
         private ControlData controldata;
         public UInt16 controlID;
-        public UInt16 incontrolID;
+        public UInt16 incontrolID = 0;
         public delegate void OutputCallback(params object[] args);
         public OutputCallback outputCallback;
         public delegate void DisplayControlDataCallback(ControlData controldata);
         public DisplayControlDataCallback displayControlDataCallback;
-        public Server2Control(TcpClient client, OutputCallback output, DisplayControlDataCallback DisplayControlData)
+        public delegate void ErrorHandleCallback(Server2Control server2control);
+        public ErrorHandleCallback errorHandleCallback;
+
+        public Server2Control(TcpClient client, OutputCallback output, DisplayControlDataCallback DisplayControlData,ErrorHandleCallback ErrorHandle)
         {
             this.client = client;
             this.outputCallback = output;
             this.displayControlDataCallback = DisplayControlData;
+            this.errorHandleCallback = ErrorHandle;
             netStream = client.GetStream();
             isExit = false;
             controldata = new ControlData();
@@ -44,6 +48,7 @@ namespace Station
                     {
                         controldata.data.remoteID = (ushort)(i+1);
                         controldata.data.controlID = this.controlID;
+                        controldata.data.incontrolID = this.incontrolID;
                         controldata.encode();
                         remotelist[i].SendData(controldata.databuffer);
                     }
@@ -72,6 +77,7 @@ namespace Station
             catch (Exception err)
             {
                 outputCallback(err.Message);
+                
             }
         }
         private void SendCallback(IAsyncResult ar)
