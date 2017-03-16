@@ -1,33 +1,41 @@
-﻿/*#include <opencv2/opencv.hpp>
+﻿#include <opencv2/opencv.hpp>
 #include <opencv2/core/core.hpp>
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/features2d/features2d.hpp"
 #include "opencv2/nonfree/nonfree.hpp"
 #include "opencv/highgui.h"
+#include <windows.h> 
+#include <iostream>  
 using namespace cv;
+using namespace std;
 int main(int argc, char** argv)
 {
-	Mat img = imread("../test.jpg");
-	SIFT sift;  //实例化 SIFT 类
+	Mat img = imread("../flower.jpg");
+	SIFT sift(1000);  //实例化 SIFT 类
 	vector<KeyPoint> key_points;	//特征点
 									// descriptors 为描述符，mascara 为掩码矩阵
 	Mat descriptors, mascara;
 	Mat output_img;					//输出图像矩阵
+	double start = GetTickCount();
 	sift(img, mascara, key_points, descriptors);	//执行 SIFT 运算
+	double end = GetTickCount();
+	cout << end - start << endl;
 	//在输出图像中绘制特征点
 	drawKeypoints(img,		//输入图像
 		key_points,			//特征点矢量
 		output_img,			//输出图像
 		Scalar::all(-1),	//绘制特征点的颜色，为随机
 							//以特征点为中心画圆，圆的半径表示特征点的大小，直线表示特征点的方向
-		DrawMatchesFlags::DRAW_RICH_KEYPOINTS);
+		DrawMatchesFlags::NOT_DRAW_SINGLE_POINTS);
 	namedWindow("SIFT");
 	imshow("SIFT", output_img);
+	cout << descriptors.rows << endl;
+	imwrite("flower_sift.jpg",output_img);
 	waitKey(0);
 	return 0;
-}*/
+}
 
-#include "opencv2/core/core.hpp"
+/*#include "opencv2/core/core.hpp"
 #include "opencv/highgui.h"
 #include "opencv2/imgproc/imgproc.hpp"
 #include "opencv2/features2d/features2d.hpp"
@@ -38,8 +46,8 @@ using namespace std;
 int main(int argc, char** argv)
 {
 	//待匹配的两幅图像，其中 img1 包括 img2，也就是要从 img1 中识别出 img2
-	Mat img1 = imread("../box_in_scene.png");
-	Mat img2 = imread("../box.png");
+	Mat img1 = imread("../IMG_1.jpg");
+	Mat img2 = imread("../IMG_2.jpg");
 	SIFT sift1, sift2;
 	vector<KeyPoint> key_points1, key_points2;
 	Mat descriptors1, descriptors2, mascara;
@@ -54,10 +62,10 @@ int main(int argc, char** argv)
 	matcher.match(descriptors1, descriptors2, matches);
 	//提取出前 30 个最佳匹配结果
 	std::nth_element(matches.begin(),	//匹配器算子的初始位置
-		matches.begin() + 29,			// 排序的数量
+		matches.begin() + 49,			// 排序的数量
 		matches.end());					// 结束位置
 	//剔除掉其余的匹配结果
-	matches.erase(matches.begin() + 30, matches.end());
+	matches.erase(matches.begin() + 50, matches.end());
 	namedWindow("SIFT_matches");
 	Mat img_matches;
 	//在输出图像中绘制匹配结果
@@ -69,6 +77,6 @@ int main(int argc, char** argv)
 	imshow("SIFT_matches", img_matches);
 	waitKey(0);
 	return 0;
-}
+}*/
 
 

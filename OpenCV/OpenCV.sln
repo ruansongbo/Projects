@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SUFT", "SUFT\SUFT.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ORB", "ORB\ORB.vcxproj", "{DE8F6104-09A3-4B1B-8FD9-9F2F0CDAC75A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HARRIS", "HARRIS\HARRIS.vcxproj", "{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -51,6 +53,16 @@ Global
 		{DE8F6104-09A3-4B1B-8FD9-9F2F0CDAC75A}.Release|Win32.ActiveCfg = Release|Win32
 		{DE8F6104-09A3-4B1B-8FD9-9F2F0CDAC75A}.Release|Win32.Build.0 = Release|Win32
 		{DE8F6104-09A3-4B1B-8FD9-9F2F0CDAC75A}.Release|x64.ActiveCfg = Release|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Debug|Mixed Platforms.ActiveCfg = Debug|x64
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Debug|Mixed Platforms.Build.0 = Debug|x64
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Debug|Win32.ActiveCfg = Debug|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Debug|Win32.Build.0 = Debug|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Debug|x64.ActiveCfg = Debug|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Release|Win32.ActiveCfg = Release|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Release|Win32.Build.0 = Release|Win32
+		{38FC9B26-B6DA-4EB3-B0D2-44E2AD4B6240}.Release|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
